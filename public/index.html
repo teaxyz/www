@@ -42,14 +42,6 @@
   <meta property="og:description" content="something new is brewing." />
   <meta property="og:image" content="https://tea.xyz/cover.png" />
   <meta property="og:image:alt" content="sh &lt;(curl tea.xyz)" />
-
-  <script>
-    const q = window.location.search.match(/[\^\?&]store=[^&]*/)
-    if (q) {
-      localStorage.signup = q[0].split('=')[1]
-      window.location.replace(`${window.location.origin}${window.location.pathname}`)
-    }
-  </script>
 </head>
 
 <body>
@@ -154,7 +146,7 @@
             <a class="nav-link" href="https://linktr.ee/teaxyz">Linktree</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="white-paper.html">White Paper</a>
+            <a class="nav-link" href="/white-paper/">White Paper</a>
           </li>
         </ul>
         <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4"
@@ -181,7 +173,7 @@
           <a class="btn btn-primary auth-btn mb-3" href="https://github.com/apps/tea-xyz/installations/new"
             role="button">Authenticate with tea<span class="badge rounded-pill bg-primary ms-3"><span
                 id="count2">287</span></span></a><br>
-          <a class="btn btn-primary mb-sm-5 mb-md-5 mb-5" id="whitepaper-btn" href="white-paper.html"
+          <a class="btn btn-primary mb-sm-5 mb-md-5 mb-5" id="whitepaper-btn" href="/white-paper/"
             role="button">Read Our White Paper</a>
         </div>
       </div>
@@ -511,7 +503,7 @@
             <a class="nav-link ps-0" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ps-0" href="#why-tea">Why Tea?</a>
+            <a class="nav-link ps-0" href="#why-tea">Why tea?</a>
           </li>
           <li class="nav-item">
             <a class="nav-link ps-0" href="#features">Features</a>
