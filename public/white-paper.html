@@ -112,10 +112,11 @@
 
     @media only screen and (max-width: 600px) {
       .auth-btn{
-        width:100%;
-        margin-bottom: 20px;
+        width: 100%;
+        margin-bottom:20px;
       }
     }
+
   </style>
 
   <a href="https://github.com/apps/tea-xyz/installations/new" class="gf-container" style="background-color:#8EC7BF;">
@@ -143,16 +144,16 @@
       <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto me-4 my-auto">
           <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#why-tea">Why tea?</a>
+            <a class="nav-link" href="index.html#why-tea">Why tea?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="index.html#features">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#community">Community</a>
+            <a class="nav-link" href="index.html#community">Community</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://medium.com/teaxyz">Blog</a>
@@ -161,23 +162,105 @@
             <a class="nav-link" href="https://linktr.ee/teaxyz">Linktree</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="white-paper.html">White Paper</a>
+            <a class="nav-link active" href="/white-paper/">White Paper</a>
           </li>
         </ul>
       </div>
-        <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4"
-          href="https://github.com/apps/tea-xyz/installations/new" role="button">Authenticate with tea<span
-            class="badge auth-btn rounded-pill bg-primary ms-3 mb-sm-5"><span id="count1">287</span></span></a>
+      <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4 mx-auto"
+        href="https://github.com/apps/tea-xyz/installations/new" role="button">Authenticate with tea<span
+          class="badge rounded-pill bg-primary ms-3"><span id="count1"></span></span></a>
     </div>
   </nav>
 
-  <!-- Start Whitepaper iFrame -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <!-- Update with White Paper PDF when ready -->
-        <iframe src="Media/whitepaper-placeholder.pdf" width="" height=""></iframe>
+  <!-- Hero Section -->
+
+  <img style="display:none;" id="tea-steam-dark-1" src="Images/tea-steam-dark-1.svg" alt="">
+  <img id="tea-steam-dark-2" src="Images/tea-steam-dark-2.svg" alt="">
+  <div class="container mb-lg-2 mb-md-5 mb-sm-0 mb-0 mt-lg-2 mt-md-5 mt-sm-0 mt-0">
+    <div class="row hero my-auto">
+      <div style="z-index:100; display:flex; flex-direction:column;" class="col-lg-9 col-sm-12">
+        <div style="margin-top:auto; margin-bottom:auto;">
+          <h1 class="display-3 mb-4">We're Open&#8208;Sourcing Our White Paper</h1>
+          <p class="mb-5 fs-sm-5 fs-lg-6 lead">Open&#8208;source is about the many coming together to create something great. In the spirit of that, we're inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open&#8208;source for web3, and we want you to be a part of laying its groundwork.<br><a style="color:#54BAAB;" href="/tea.white-paper.pdf">Download our white paper</a>.</p>
+        </div>
+        </div>
+        <div style="display:flex; flex-direction:column;" class="col-lg-3 col-sm-12">
+          <div style="margin-top:auto; z-index:100;">
+            <a class="btn btn-primary mb-3" href="https://github.com/apps/tea-xyz/installations/new"
+              role="button">Authenticate with tea</a><br>
+            <a class="btn btn-primary mb-sm-5 mb-md-5 mb-5" id="whitepaper-btn" href="https://github.com/teaxyz/white-paper"
+              role="button">Contribute to Our White Paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Start PDF -->
+
+  <div class="container" style="margin-bottom:100px; z-index:2;">
+    <embed style="min-height:100vh;width:100%;" type="application/pdf" src="/tea.white-paper.pdf#toolbar=0&navpanes=0&scrollbar=0&view=fitH,100">
+  </div>
+
+  <!-- Community Links -->
+  <div class="row community-container pt-5 pb-5 mt-5 mb-5">
+    <div class="container p-4" id="community">
+      <div class="row">
+        <div class="col">
+          <h3 style="text-align:center;" class="mb-5 display-5">Join the Community</h3>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://discord.gg/KCZsXfJphn">
+            <div class="com-card mb-4">
+              <img src="Images/discord.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://twitter.com/teaxyz_">
+            <div class="com-card mb-4">
+              <img src="Images/twitter.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://github.com/teaxyz">
+            <div class="com-card mb-4">
+              <img src="Images/github.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://t.me/tea_xyz">
+            <div class="com-card mb-4">
+              <img src="Images/telegram.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg align-self-center">
+          <a href="https://reddit.com/r/teaxyz">
+            <div class="com-card mb-4">
+              <img src="Images/reddit.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg align-self-center">
+          <a href="https://www.instagram.com/tea.xyz/">
+            <div class="com-card mb-4">
+              <img src="Images/instagram-iconAsset 1.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>

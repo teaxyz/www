@@ -101,6 +101,33 @@
       margin-top: auto;
       margin-bottom: auto;
     }
+
+    .cal-btn{
+      float:right;
+      background-color:#327280;
+      width:200px;
+    }
+
+    .ama-text{
+      float:left;
+      margin-top:auto;
+      margin-bottom:auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .cal-btn{
+        background-color:#327280;
+        width:100%;
+        margin-bottom: 20px;
+      }
+
+      .ama-text{
+        float: none;
+        text-align: center;
+        margin-bottom: 20px;
+
+      }
+    }
   </style>
 
   <a href="https://github.com/apps/tea-xyz/installations/new" class="gf-container" style="background-color:#8EC7BF;">
@@ -178,7 +205,7 @@
         </div>
       </div>
       <div class="col-lg-6 col-sm-12">
-        <div class="card ms-lg-5 ms-sm-0" style="border-radius:15px; z-index:100;">
+        <div class="card ms-lg-5 ms-sm-0 mb-3" style="border-radius:15px; z-index:100;">
           <div class="card-body my-auto"
             style="display:flex; flex-direction:column; background-color: #23282C; border: 2px solid #54BAAB; border-radius:15px;">
             <div class="p-lg-5 p-md-3 p-sm-0" style="margin-top:auto; margin-bottom:auto;">
@@ -191,7 +218,7 @@
                     communi'<span style="color:#54BAAB;">tea</span></h5>
               <p class="card-text lead" id="revolution-text" style="text-align:center;">The revolution is here. Be among
                 the first to authenticate your Github with tea. </p>
-              <p style="text-align:center;" id="auth-body-text">Early-adoption developers will be entitled a variety of
+              <p style="text-align:center;" id="auth-body-text">Early-adoption developers will be entitled to a variety of
                 exciting rewards,
                 including minted NFT certificates. Take a sip while it’s hot!</p>
             </div>
@@ -206,6 +233,18 @@
             </div>
           </div>
         </div>
+
+        <div class="card ms-lg-5 ms-sm-0" style="border-radius:15px; z-index:100;">
+          <div class="card-body my-auto"
+            style="display:flex; flex-direction:column; background-color: #23282C; border: 2px solid #54BAAB; border-radius:15px;">
+            <div class="p-lg-2 p-md-2 p-sm-0">
+              <p class="lead mt-2 ama-text">Tune into our weekly AMA’s</p>
+              <a class="btn btn-primary cal-btn" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NWIzOTJrY3Q0M21hMHFlMmpkZmJnMHZuYWhfMjAyMjA1MTVUMTcwMDAwWiBuaWNrQHRlYS54eXo&amp;tmsrc=nick%40tea.xyz&amp;scp=ALL"
+                role="button">Add to Calendar</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
