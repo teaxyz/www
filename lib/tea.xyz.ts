@@ -44,7 +44,7 @@ export default class TeaXYZ extends cdk.Stack {
       destinationBucket: bucket,
       distribution,
       distributionPaths: ["/", "/index.html"],
-      sources: [s3Deployment.Source.asset('./website')],
+      sources: [s3Deployment.Source.asset('./public')],
     });
   }
 }
