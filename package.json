@@ -5,6 +5,9 @@
   "author": "Julien Goux",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=14 <15"
+  },
   "scripts": {
     "bootstrap": "CDK_NEW_BOOTSTRAP=1 cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
     "deploy": "cdk deploy \"TeaXYZ-${STAGE}\" --require-approval never --outputs-file cdk.out.json",
