@@ -1,0 +1,6 @@
+{
+  "app": "yarn ts-node bin/app.ts",
+  "context": {
+    "@aws-cdk/core:newStyleStackSynthesis": true
+  }
+}

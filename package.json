@@ -1,0 +1,26 @@
+{
+  "name": "deploy-your-pull-requests-to-aws-using-github-actions-and-aws-cdk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Julien Goux",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "bootstrap": "CDK_NEW_BOOTSTRAP=1 cdk bootstrap --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess",
+    "deploy": "cdk deploy \"TeaXYZ-${STAGE}\" --require-approval never --outputs-file cdk.out.json",
+    "postdeploy": "node --eval \"console.log('::set-output name=env_url::' + require('./cdk.out.json')['TeaXYZ-${STAGE}'].DeploymentUrl)\"",
+    "destroy": "cdk destroy \"TeaXYZ-${STAGE}\" --force"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-cloudfront": "1.93.0",
+    "@aws-cdk/aws-cloudfront-origins": "1.93.0",
+    "@aws-cdk/aws-s3": "1.93.0",
+    "@aws-cdk/aws-s3-deployment": "1.93.0",
+    "@aws-cdk/core": "1.93.0",
+    "@tsconfig/node14": "1.0.0",
+    "@types/node": "14.14.34",
+    "aws-cdk": "1.93.0",
+    "ts-node": "9.1.1",
+    "typescript": "4.2.3"
+  }
+}
