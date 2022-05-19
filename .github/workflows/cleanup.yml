@@ -1,0 +1,42 @@
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  clean-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+
+      - name: set STAGE variable in environment for next steps
+        run: echo "STAGE=pr-${{ github.event.number }}-${{ env.GITHUB_HEAD_REF_SLUG }}" >> $GITHUB_ENV
+
+      - name: checkout the files
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      # there is a bug with the actions/cache used in bahmutov/npm-install@v1 on "closed" event
+      # more infos here : https://github.com/actions/cache/issues/478
+      - name: install node dependencies
+        run: yarn --frozen-lockfile
+
+      - name: configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: destroy the stack on AWS
+        run: yarn destroy
+
+      - name: delete the github deployments and the corresponding environment
+        uses: strumwolf/delete-deployment-environment@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: ${{ env.STAGE }}
