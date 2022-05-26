@@ -1,0 +1,130 @@
+<div class="container footer mb-5 mt-5">
+    <div class="row mb-5 mt-5">
+      <div class="col-lg-4">
+        <img src="Images/tea-light.svg" alt="tea.xyz logo" style="width:100px;">
+        <p class="boilerplate mt-3 small">tea is revolutionizing open&#8208;source by leveraging blockchain and web3 to
+          ensure fairness and equitability for the developers who power the internet. Now tell me, will you answer the
+          call? A shot&#x27;s been heard around the web, and the tea army wants you to join the cause.</p>
+      </div>
+
+      <div class="col-lg-2 col-sm-6 col-6 mt-3">
+        <h6>Quick Links</h6>
+        <ul class="nav flex-column small">
+          <li class="nav-item">
+            <a class="nav-link ps-0" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-0" href="#why-tea">Why tea?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-0" href="#features">Features</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-sm-6 col-6 mt-3 mb-3">
+        <h6>tea Links</h6>
+        <ul class="nav flex-column small">
+          <li class="nav-item">
+            <a class="nav-link ps-0" href="https://linktr.ee/teaxyz">Linktree</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-0" href="mailto:hello@tea.xyz">Careers</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 mt-3">
+        <h6 class=" mb-4">Get updates to your inbox</h6>
+
+<!-- Start Sendx Form Module -->
+
+      <div class="sendx-modal-TRDBBvXuDV3vy1t0U684MU">
+        <div class="sendx-modal-content-TRDBBvXuDV3vy1t0U684MU sendx-modal">
+          <div class="sendx-modal-right-TRDBBvXuDV3vy1t0U684MU">
+            <div class="sendx-modal-body-TRDBBvXuDV3vy1t0U684MU">
+	             <form class="sendx-submit-form-TRDBBvXuDV3vy1t0U684MU" method="post" action="https://app.sendx.io/api/v1/form/TRDBBvXuDV3vy1t0U684MU">
+	                <input id="SubscriberForm-Email-TRDBBvXuDV3vy1t0U684MU" type="Email" class="sendx-field-TRDBBvXuDV3vy1t0U684MU email-field mb-3" data-attr-type="0" name="Email" placeholder="Your Email" required>
+	                <input type="submit" class="sendx-submit-TRDBBvXuDV3vy1t0U684MU sendx-button-TRDBBvXuDV3vy1t0U684MU btn-primary email-submit"  name="subscribe" value="Subscribe">
+	               </input>
+               </form>
+	             <div class="sendx-close-text-TRDBBvXuDV3vy1t0U684MU">
+              <p></p>
+	           </div>
+	         <div style="display:flex; align-items:baseline;" class="sendx-gdpr-TRDBBvXuDV3vy1t0U684MU-wrapper">
+	               <input class="sendx-gdpr-TRDBBvXuDV3vy1t0U684MU" type="checkbox"></input><span class="sendx-gdpr-content-TRDBBvXuDV3vy1t0U684MU ms-2"><p>Opt in to receive updates from us </p></span>
+    	         </div>
+    	       </div>
+          </div>
+        </div>
+    </div>
+
+<!-- End Sendx Form -->
+
+        <p style="font-size: 16px; color: gray;">You can also share our <a style="color:#54BAAB;" href="https://linktr.ee/teaxyz">Linktree</a>.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <p class="text-center" style="font-size:12px; color:#B7C7C8;">© 2022 tea inc.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    try {
+      fetch('https://app.tea.xyz/api/signups')
+        .then(res => res.json())
+        .then(res => {
+          if (!(localStorage['signup'] || '').match(/:::/)) {
+            $('#count').html(res.signups)
+          }
+          $('#count1').html(res.signups)
+          $('#count2').html(res.signups)
+        })
+    } catch (e) {
+      console.error(e)
+    }
+  </script>
+
+  <script>
+    $(window).scroll(function () {
+      $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+    });
+
+    if (localStorage['signup'].match(/:::/)) {
+      const [username, serial] = localStorage.signup.split(':::');
+      $('.box-auth-true').show();
+      $('.box-auth-false').hide();
+      $('#auth-username').html(username);
+      $('#count').html(serial);
+      $('#count-sub-text').html('YOUR AUTHENTICATION NUMBER');
+      $('#communitea').html('Thanks for joining our communi&#39;<span style="color:#54BAAB;">tea</span>');
+      $('#revolution-text').html(
+        'Now stay tuned! As an early authenticator, you’ll be entitled to a variety of exciting rewards, including minted NFT certificates.'
+      );
+      $('#auth-body-text').hide();
+      $('.rounded-pill').hide();
+      $('.auth-btn').html('Configure GitHub App');
+    }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M5LVH76F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q3M5LVH76F');
+  </script>
