@@ -1,0 +1,89 @@
+     <style>
+      .gf-container {
+        width: 80px;
+        height: 80px;
+        border-radius: 60px;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        cursor: pointer;
+        box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+        animation: pulse 2s infinite;
+        z-index: 200;
+      }
+  
+      .gf-container:hover {
+        animation: none;
+      }
+  
+      @-webkit-keyframes pulse {
+        0% {
+          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        }
+  
+        70% {
+          -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+        }
+  
+        100% {
+          -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        }
+      }
+  
+      @keyframes pulse {
+        0% {
+          -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+        }
+  
+        70% {
+          -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+          box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+        }
+  
+        100% {
+          -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+          box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+        }
+      }
+  
+      .github-icon {
+        width: 60%;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+  
+      .cal-btn{
+        float:right;
+        background-color:#327280;
+        width:200px;
+      }
+  
+      .ama-text{
+        float:left;
+        margin-top:auto;
+        margin-bottom:auto;
+      }
+  
+      @media only screen and (max-width: 600px) {
+        .cal-btn{
+          background-color:#327280;
+          width:100%;
+          margin-bottom: 20px;
+        }
+  
+        .ama-text{
+          float: none;
+          text-align: center;
+          margin-bottom: 20px;
+  
+        }
+      }
+    </style>
+  
+    <a href="https://github.com/apps/tea-xyz/installations/new" class="gf-container" style="background-color:#8EC7BF;">
+      <img src="Images/github.svg" alt="" class="github-icon mx-auto">
+  
+    </a>
