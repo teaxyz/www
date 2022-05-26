@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Equitable Open-Source for Web3</title>
+    <link>https://tea.xyz/</link>
+    <description>Recent content on Equitable Open-Source for Web3</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://tea.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>White Paper</title>
+      <link>https://tea.xyz/white-paper/</link>
+      <pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://tea.xyz/white-paper/</guid>
+      <description>page this is the page</description>
+    </item>
+    
+  </channel>
+</rss>

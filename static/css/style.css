@@ -1,0 +1,421 @@
+/*General*/
+
+html {
+    -webkit-hyphenate-character: '-';
+}
+
+body{
+  background-color: #2B3033;
+}
+
+/*Post Authentication Box*/
+
+/*Directions for Jacob:
+
+For authenticated users:
+
+* .box-auth-true = display:block;
+* .box-auth-false = display: none;
+* #auth-username = editInnerHTML to show username/email
+* #count = editInnerHTML to show user's authentication number
+* #count-sub-text = editInnerHTML to read "YOUR AUTHENTICATION NUMBER"
+* #communitea = editInnerHTML to read "Thanks for joining our"
+* #revolution-text = editInnerHTML to read "Now stay tuned! As an early authenticator, you’ll be entitled to a variety of exciting rewards, including minted NFT certificates."
+* #auth-body-text = display: none;
+* .rounded-pill = display: none;
+* .auth-btn = editInnerHTML to read "Configure GitHub App"
+
+*/
+
+/*Begin Auth Module*/
+
+.box-auth-true{
+  background-color: #54BAAB !important;
+  border: 1.5px solid #13FBD9 !important;
+  box-shadow: 0px 0px 5px #13FBD9 !important;
+  border-radius: 5px;
+  display: none;
+}
+
+.box-auth-false{
+  background-color:#44494B;
+  border-radius:5px;
+  display: block;
+}
+
+#auth-username{
+  color: white;
+  text-decoration: underline;
+}
+
+#count-sub-text{
+  text-transform: uppercase;
+}
+
+.navbar-dark .navbar-toggler{
+  border:none;
+}
+
+.visuallyHidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+
+.hamburger {
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #8EC7BF;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2,
+.bar3 {
+    top: 13.5px;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+/* HAMBURGER 1 */
+.checkbox1:checked + label > .hamburger1 > .bar1{
+    transform: rotate(45deg);
+    transform-origin: 5%;
+    width: 41px
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar2 {
+    transform: translateX(-40px);
+    background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar3 {
+    transform: translateX(40px);
+    background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar4 {
+    transform-origin: 5%;
+    transform: rotate(-45deg);
+    width: 41px;
+}
+
+.container,
+.top-nav{
+  max-width: 1280px;
+}
+
+.navbar{
+  background-color: black;
+}
+
+.bg-dark {
+    background:transparent !important;
+    transition:0.2s ease-in-out;
+}
+.bg-dark.scrolled {
+    background-color:#000 !important;
+}
+
+#tea-steam-dark-1{
+  z-index:0;
+  position: absolute;
+}
+
+#tea-steam-dark-2{
+  z-index: 9;
+  position: absolute;
+  top:0px;
+  right: 0px;
+  width: 30%;
+}
+
+.rounded-pill{
+  background-color: #7EC9C0 !important;
+}
+
+.row{
+  width: 100%;
+  margin: 0 !important;
+}
+
+.container{
+  z-index: 50;
+}
+
+.hero{
+  padding: 80px 0px;
+}
+
+#why-tea{
+  margin-top: 80px;
+}
+
+  .hero-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    #tea-steam-1{
+      position: absolute;
+      z-index: 0;
+      margin-top: -100px;
+      width: 50%
+    }
+
+    #tea-steam-2{
+      position: absolute;
+      z-index: 0;
+      display: block;
+      right: 0px;
+      margin-top: 50px;
+    }
+
+    #tea-steam-dark-1{
+      width:90%;
+    }
+
+    #tea-steam-dark-2{
+      display:none;
+    }
+
+    .hero-image{
+      display:none;
+    }
+
+    #binance{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+    }
+
+    h1{
+      font-size: 3.5rem !important;
+    }
+
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    #tea-steam-1{
+      position: absolute;
+      z-index: 0;
+      margin-top: -100px;
+    }
+
+    #tea-steam-2{
+      position: absolute;
+      z-index: 0;
+      right: 0px;
+      display: block;
+      margin-top: 100px;
+    }
+
+    #binance{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+    }
+
+    .web2-container{
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .web3-container{
+      padding-top: 0px;
+      padding-bottom: 100px;
+    }
+
+    .partners{
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+}
+
+.web3-tower{
+  width:70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.web2-tower{
+  width: 50%;
+}
+
+  /*Typorgaphy*/
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5{
+    font-family: 'Playfair Display', serif, system-ui !important;
+    color: #fff;
+    z-index:200;
+  }
+
+  h6{
+    color: #fff;
+  }
+
+  p{
+    color:#fff;
+  }
+
+  .yellow{
+    color: #DDFC76;
+  }
+
+  .charcoal{
+    color: #2B3033;
+  }
+
+      .btn-primary{
+        background-color: #54BAAB;
+        border: none;
+        border-radius: 60px;
+        width: 300px;
+        padding: 10px 0px;
+        transition: 0.2s ease-in-out;
+      }
+
+
+      #tea-steam-1{
+        position: absolute;
+        z-index: 0;
+        margin-top: -100px;
+      }
+
+      #tea-steam-2{
+        position: absolute;
+        z-index: 0;
+        right: 0px;
+        display: block;
+        margin-top: 100px;
+      }
+
+      .community-icon{
+        width: 30%;
+      }
+
+      .card-body{
+        background-color: #2B3033;
+        border: 1px solid #DCDBDB;
+        border-radius: 3px;
+        box-shadow: 0px 0px 24px #16191B;
+      }
+
+      hr{
+        border: 1px solid #fff;
+      }
+
+      .btn-primary:hover{
+        background-color: #62CFBF;
+      }
+
+      #whitepaper-btn{
+        border: 2px solid #fff !important;
+        background-color: #2B3033;
+      }
+
+      .mission,
+      .community-container{
+        background-color: #54BAAB !important;
+      }
+
+      .mission{
+        padding: 100px 0px;
+      }
+
+      .com-card{
+        background-color: #62C8B9 !important;
+        border: 2px solid #7CEEDD;
+        border-radius: 3px;
+        height: 185px;
+        display: flex;
+        justify-content: center;
+        transition: 0.2s ease-in-out;
+      }
+
+      .com-card:hover{
+        cursor:pointer;
+        box-shadow: 0px 0px 12px rgba(81, 92, 92, 0.3);
+        transform: scale(1.02);
+      }
+
+      code{
+        color:#DDFC76;
+      }
+
+      .nav-link{
+        color:white;
+      }
+
+      .email-field{
+        width:100%;
+        border: none;
+        border-radius: 30px;
+        background-color: #3F4346;
+        padding: 10px 20px;
+        color: white;
+        transition: 0.1s ease-in-out;
+      }
+
+      .email-field:focus{
+        border: 1px solid #54BAAB !important;
+        box-shadow: 0px 0px 4px rgba(84, 186, 171, 0.5);
+      }
+
+      input{
+        outline: none !important;
+      }
+
+      .email-submit{
+        width: 100%;
+      }
+
+      .partners{
+        background-color: #23282C;
+        border-radius: 10px;
+      }
+
+      /*Whitepaper Page*/
+
+      iframe {
+          display: block;       /* iframes are inline by default */
+          background: #000;
+          border: none;         /* Reset default border */
+          height: 100vh;
+          width:100%;
+      }
