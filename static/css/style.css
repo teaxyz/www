@@ -52,9 +52,6 @@ For authenticated users:
   text-transform: uppercase;
 }
 
-.rounded-pill{
-}
-
 .navbar-dark .navbar-toggler{
   border:none;
 }
@@ -151,6 +148,7 @@ For authenticated users:
 #tea-steam-dark-2{
   z-index: 9;
   position: absolute;
+  top:0px;
   right: 0px;
   width: 30%;
 }
@@ -407,7 +405,9 @@ For authenticated users:
         width: 100%;
       }
 
-      .footer{
+      .partners{
+        background-color: #23282C;
+        border-radius: 10px;
       }
 
       /*Whitepaper Page*/
