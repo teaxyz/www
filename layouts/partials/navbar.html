@@ -16,11 +16,27 @@
       </button>
       <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto me-4 my-auto">
-          {{ range .Site.Menus.main }}
           <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
-            <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          {{ end }}
+          <li class="nav-item">
+            <a class="nav-link" href="#why-tea">Why tea?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#community">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://medium.com/teaxyz">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://linktr.ee/teaxyz">Linktree</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/white-paper/">White Paper</a>
+          </li>
         </ul>
         <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4"
           href="https://github.com/apps/tea-xyz/installations/new" role="button">Authenticate with tea<span
