@@ -1,3 +1,37 @@
 baseURL = 'https://tea.xyz/'
 languageCode = 'en-us'
 title = 'Equitable Open-Source for Web3'
+
+# menu links via config file
+
+[menu]
+  [[menu.main]]
+    identifier = 'why-tea'
+    name = 'Why tea?'
+    title = 'why tea?'
+    url = '/#why-tea'
+    weight = 100
+  [[menu.main]]
+    identifier = 'features'
+    name = 'Features'
+    title = 'features'
+    url = '/#features'
+    weight = 100
+  [[menu.main]]
+    identifier = 'community'
+    name = 'Community'
+    title = 'community'
+    url = '/#community'
+    weight = 100
+  [[menu.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    title = 'blog'
+    url = 'https://medium.com/teaxyz'
+    weight = 100
+  [[menu.main]]
+    identifier = 'linktree'
+    name = 'Linktree'
+    title = 'linktree'
+    url = 'https://linktr.ee/teaxyz'
+    weight = 100
