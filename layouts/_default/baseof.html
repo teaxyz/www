@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    {{- partial "head.html" . -}}
-    <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WQVCLC"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <header>
+{{- partial "head.html" . -}}
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WQVCLC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
         {{- partial "header.html" . -}}
-        </header>
-        {{- partial "navbar.html" . -}}
-        <main>
+    </header>
+    {{- partial "navbar.html" . -}}
+    <main>
         {{- block "main" . }}{{- end }}
-        </main>
-        <footer>
+    </main>
+    <footer>
         {{- partial "footer.html" . -}}
-        </footer>
-        {{- partial "scriptFooter.html" . -}}
-    </body>
+    </footer>
+    {{- partial "scriptFooter.html" . -}}
+</body>
+
 </html>
