@@ -1,0 +1,12 @@
+{{ define "main" }}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="headshot img-thumbnail"  src="{{.Site.Params.Headshot }}">
+        </div>
+        <div class="col-lg-8">{{ .Content }}
+        </div>
+    </div>
+</div>
+{{ end }}
