@@ -80,22 +80,6 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script>
-    try {
-      fetch('https://app.tea.xyz/api/signups')
-        .then(res => res.json())
-        .then(res => {
-          if (!(localStorage['signup'] || '').match(/:::/)) {
-            $('#count').html(res.signups)
-          }
-          $('#count1').html(res.signups)
-          $('#count2').html(res.signups)
-        })
-    } catch (e) {
-      console.error(e)
-    }
-  </script>
-
-  <script>
     $(window).scroll(function () {
       $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
     });
@@ -105,7 +89,7 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
       $('.box-auth-true').show();
       $('.box-auth-false').hide();
       $('#auth-username').html(username);
-      $('#count').html(serial);
+      $('#count').html(`${serial} / <span id='count3'></span>`);
       $('#count-sub-text').html('YOUR AUTHENTICATION NUMBER');
       $('#communitea').html('Thanks for joining our communi&#39;<span style="color:#54BAAB;">tea</span>');
       $('#revolution-text').html(
@@ -117,7 +101,24 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     }
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M5LVH76F"></script>
+<script>
+  try {
+    fetch('https://app.tea.xyz/api/signups')
+      .then(res => res.json())
+      .then(res => {
+        if (!(localStorage['signup'] || '').match(/:::/)) {
+          $('#count').html(res.signups)
+        }
+        $('#count1').html(res.signups)
+        $('#count2').html(res.signups)
+        $('#count3').html(res.signups)
+      })
+  } catch (e) {
+    console.error(e)
+  }
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M5LVH76F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
