@@ -1,7 +1,7 @@
 ---
 title: "White-Paper"
-Description: "Making the Complex Simple and Easy to Understand!"
+Description: "Equitable Open-Source for web3"
 layout: "white-paper"
 menu: main
-weight: 10
+weight: 7
 ---

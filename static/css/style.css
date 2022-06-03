@@ -405,11 +405,6 @@ For authenticated users:
         width: 100%;
       }
 
-      .partners{
-        background-color: #23282C;
-        border-radius: 10px;
-      }
-
       /*Whitepaper Page*/
 
       iframe {
@@ -418,4 +413,37 @@ For authenticated users:
           border: none;         /* Reset default border */
           height: 100vh;
           width:100%;
+      }
+
+      @media only screen and (max-width: 980px) {
+        .auth-btn {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 980px) {
+        .auth-btn {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .mobile-pdf {
+          display: block;
+        }
+
+        .pdf-iframe {
+          display: none;
+        }
+      }
+
+      @media only screen and (min-width: 980px) {
+
+        .mobile-pdf {
+          display: none;
+        }
+
+        .pdf-iframe {
+          display: block;
+        }
       }
