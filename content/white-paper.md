@@ -1,6 +1,6 @@
 ---
 title: "White-Paper"
-Description: "Equitable Open-Source for web3"
+Description: "tea.white-paper"
 layout: "white-paper"
 menu: main
 weight: 7
