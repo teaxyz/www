@@ -1,5 +1,42 @@
 {{ define "main" }}
 
+<style media="screen">
+  .main-nav{
+    display:none;
+  }
+</style>
+
+<nav class="navbar bg-dark navbar-expand-lg navbar-dark sticky-top my-auto">
+    <div class="container-fluid top-nav">
+      <a class="navbar-brand" href="#"><img src="/Images/tea-main-logo.svg" style="width:100px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span>
+          <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+          <label for="checkbox1">
+            <div class="hamburger hamburger1">
+              <span class="bar bar1"></span>
+              <span class="bar bar2"></span>
+              <span class="bar bar3"></span>
+              <span class="bar bar4"></span>
+            </div>
+          </label></span>
+      </button>
+      <div class="collapse navbar-collapse pt-2 pb-2" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-4 my-auto">
+          {{ range .Site.Menus.main }}
+          <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+            <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <a class="btn btn-primary auth-btn mt-lg-0 mt-md-0 mt-sm-4 mt-4"
+        href="https://github.com/apps/tea-xyz/installations/new" role="button">Authenticate with tea<span
+          class="badge rounded-pill bg-primary ms-3"><span id="count1">287</span></span></a>
+    </div>
+  </nav>
+
 <!-- Hero Section -->
 
   <img style="display:none;" id="tea-steam-dark-1" src="/Images/tea-steam-dark-1.svg" alt="">
