@@ -301,6 +301,10 @@ For authenticated users:
     color: #2B3033;
   }
 
+  .teal{
+    color: #54BAAB;
+  }
+
       .btn-primary{
         background-color: #54BAAB;
         border: none;

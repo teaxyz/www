@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+<img id="tea-steam-dark-1" src="/Images/tea-steam-dark-1.svg" alt="">
+<img id="tea-steam-dark-2" src="/Images/tea-steam-dark-2.svg" alt="">
+<div class="container mb-lg-5 mb-md-5 mb-sm-0 mb-0 mt-lg-5 mt-md-5 mt-sm-0 mt-0">
+  <div class="row hero my-auto">
+    <div style="z-index:100; display:flex; flex-direction:column;" class="col-lg-6 col-sm-12 order-lg-1 order-sm-2 order-2">
+      <div style="margin-top:auto; margin-bottom:auto;">
+        <h1 class="display-2 mb-4">Authenticate your <span style="color:#54BAAB;">Github</span> with tea.</h1>
+        <p class="mb-5 fs-sm-5 fs-lg-6 lead">Early-adoption developers will be entitled to a variety of exciting rewards, including minted NFT certificates. Simply log into your Github account, install our application, and then answer a couple quick questions. The open-source revolution is here, so be sure to take a sip while it’s hot!</p>
+        <a class="btn btn-primary auth-btn mb-3" href="https://github.com/apps/tea-xyz/installations/new"
+          role="button">Authenticate with tea<span class="badge rounded-pill bg-primary ms-3"><span
+              id="count2">287</span></span></a>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12 order-lg-2 order-sm-1 order-1 mb-lg-0 mb-md-0 mb-sm-4 mb-4">
+      <div class="card ms-lg-5 ms-sm-0 mb-3" style="border-radius:15px; z-index:100;">
+        <div class="card-body my-auto"
+          style="display:flex; flex-direction:column; background-color: #23282C; border: 2px solid #54BAAB; border-radius:15px;">
+          <div class="p-lg-5 p-md-3 p-sm-0" style="margin-top:auto; margin-bottom:auto;">
+            <img src="/Images/tea-auth-qr-code.svg" alt="">
+          </div>
+          <div class="box-auth-true">
+            <p class="text-center my-auto p-3" style="color:#23282C;"><i class="bi bi-check-circle-fill lead pe-2"
+                style="color:#23282C;"></i>Authenticated as <span id="auth-username">[username]</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Community Links -->
+<div class="row community-container pt-5 pb-5 mt-5 mb-5">
+  <div class="container p-4" id="community">
+    <div class="row">
+      <div class="col">
+        <h3 style="text-align:center;" class="mb-5 display-5">Join the Community</h3>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-6 col-sm-6 col-lg">
+        <a href="https://discord.gg/KCZsXfJphn">
+          <div class="com-card mb-4">
+            <img src="/Images/discord.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg">
+        <a href="https://twitter.com/teaxyz_">
+          <div class="com-card mb-4">
+            <img src="/Images/twitter.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg">
+        <a href="https://github.com/teaxyz">
+          <div class="com-card mb-4">
+            <img src="/Images/github.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg">
+        <a href="https://t.me/tea_xyz">
+          <div class="com-card mb-4">
+            <img src="/Images/telegram.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg align-self-center">
+        <a href="https://reddit.com/r/teaxyz">
+          <div class="com-card mb-4">
+            <img src="/Images/reddit.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg align-self-center">
+        <a href="https://www.instagram.com/tea.xyz/">
+          <div class="com-card mb-4">
+            <img src="/Images/instagram-iconAsset 1.svg" alt="" class="community-icon">
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
