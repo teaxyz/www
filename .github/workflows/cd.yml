@@ -30,7 +30,7 @@ jobs:
         hugo-version: 'latest'
 
     - name: Build
-      run: hugo --minify
+      run: hugo -s src -d ../public --minify
 
     ## means s3 sync will only sync things we need sync’d
     - uses: chetan/git-restore-mtime-action@v1

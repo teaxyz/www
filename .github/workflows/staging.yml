@@ -37,9 +37,10 @@ jobs:
       run: |
         sed -i -e 's/^baseURL\s*=.*$/baseUrl = ""/i' config.toml
         echo "relativeurls = true" >>config.toml
+      working-directory: src
 
     - name: Build
-      run: hugo
+      run: hugo -s src -d ../public
 
     - uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -52,10 +53,13 @@ jobs:
         node-version: 14
     - name: install node dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: .cdk
 
     - name: deploy the stack on AWS
       id: cdk_deploy
       run: yarn deploy
+      working-directory: .cdk
 
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1

@@ -24,6 +24,7 @@ jobs:
       # more infos here : https://github.com/actions/cache/issues/478
       - name: install node dependencies
         run: yarn --frozen-lockfile
+        working-directory: .cdk
 
       - name: configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -34,6 +35,7 @@ jobs:
 
       - name: destroy the stack on AWS
         run: yarn destroy
+        working-directory: .cdk
 
       - name: delete the github deployments and the corresponding environment
         uses: strumwolf/delete-deployment-environment@v1.1.0
