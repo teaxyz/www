@@ -451,3 +451,48 @@ For authenticated users:
           display: block;
         }
       }
+
+      /* Accordion Styling */
+
+      .accordion{
+        border: 2px solid #DCDBDB;
+        border-radius: 3px;
+        box-shadow: 0px 0px 24px #16191B;
+      }
+
+      .accordion-item{
+        border:none;
+      }
+
+      .accordion-button{
+        background-color: #2B3033;
+        color: #fff;
+        outline: none;
+        box-shadow: none;
+        border:none;
+      }
+
+      .accordion-button:not(.collapsed){
+        background-color: #54BAAB;
+        color: #2B3033;
+      }
+
+      .accordion-button:focus{
+        border:none;
+        outline:none;
+        box-shadow: none;
+        font-weight: bold;
+      }
+
+      .accordion-body{
+        background-color: #23282C;
+        color: #fff;
+      }
+
+      .accordion-button::after{
+        display:none;
+      }
+
+      .accordion-body{
+        font-weight:300;
+      }
