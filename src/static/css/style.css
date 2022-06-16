@@ -489,10 +489,6 @@ For authenticated users:
         color: #fff;
       }
 
-      .accordion-button::after{
-        display:none;
-      }
-
       .accordion-body{
         font-weight:300;
       }
