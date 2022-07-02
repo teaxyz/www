@@ -18,7 +18,7 @@ hugo serve --watch -D
 
 # Editing/Syntax
 
-This site is has been built with the help of [Bootstrap] for CSS/JS heavy-lifting and [HUGO] for templating and DRY development. HUGO must be installed locally in order to adequately preview development via terminal command `hugo server`. Partials/repeated components can be be found in [`layouts/partials`]. Each HTML page ([`layouts/page`]) must have a corresponding Markdown file in the [`content`] folder.
+This site has been built with the help of [Bootstrap] for CSS/JS heavy-lifting and [HUGO] for templating and DRY development. HUGO must be installed locally in order to adequately preview development via terminal command `hugo server`. Partials/repeated components can be be found in [`layouts/partials`]. Each HTML page ([`layouts/page`]) must have a corresponding Markdown file in the [`content`] folder.
 
 # Creating a New Page
 
