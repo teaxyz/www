@@ -1,9 +1,11 @@
-on:
-  pull_request:
+on: pull_request
 
 concurrency:
   group: ${{ github.event.number }}
   cancel-in-progress: true
+
+env:
+  TEA_SECRET: ${{ secrets.TEA_SECRET }}
 
 jobs:
   deploy:
@@ -11,8 +13,7 @@ jobs:
     steps:
     - name: inject slug/short variables
       uses: rlespinasse/github-slug-action@v3.x
-
-    - name: set STAGE variable in environment for next steps
+    - name: Set STAGE variable in environment for next steps
       run: echo "STAGE=pr-${{ github.event.number }}-${{ env.GITHUB_HEAD_REF_SLUG }}" >> $GITHUB_ENV
 
     - name: Create Deployment
@@ -20,27 +21,29 @@ jobs:
       id: deployment
       with:
         step: start
-        token: ${{ github.token }}
         env: ${{ env.STAGE }}
         ref: ${{ github.head_ref }}
-        no_override: false
-        transient: true
+        override: true
 
     - uses: actions/checkout@v3
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-
-    - name: Staging configuration
+    - name: Apply Staging Configuration
       run: |
         sed -i -e 's/^baseURL\s*=.*$/baseUrl = ""/i' config.toml
         echo "relativeurls = true" >>config.toml
       working-directory: src
 
-    - name: Build
-      run: hugo -s src -d ../public
+    - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
+    - uses: teaxyz/setup@v0
+      with:
+        target: build
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - uses: bahmutov/npm-install@v1
+      with:
+        working-directory: .cdk
 
     - uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -48,15 +51,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 14
-    - name: install node dependencies
-      uses: bahmutov/npm-install@v1
-      with:
-        working-directory: .cdk
-
-    - name: deploy the stack on AWS
+    - name: Deploy to AWS
       id: cdk_deploy
       run: yarn deploy
       working-directory: .cdk
@@ -66,7 +61,6 @@ jobs:
       if: always()
       with:
         step: finish
-        token: ${{ github.token }}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         env: ${{ env.STAGE }}
