@@ -1,65 +1,49 @@
 ![tea](https://tea.xyz/banner.png)
 
-Deploys to [tea.xyz](https://tea.xyz).
+Deploys to [tea.xyz].
 
 
-# Conditions of Use
+# Legal
 
-This repo is open source, but you may not publish this website in an attempt
-to masquerade as tea.inc. Trademark law has our back here.
+You may not publish this website in an attempt to masquerade as tea.inc.
+The tea logo and wordmark are registered trademarks of tea.inc.
 
 
-# Getting Started
+# Contributing
+
+* The site is built with [Hugo] and [Bootstrap].
+* `.html` files in [`./src/layouts/page/`] have a corresponding `.md` file in [`./src/content/`].
+* Repeated components are in [`./src/layouts/partials/`].
+
+## Getting Started
+
+hugo can render your edits while you work:
 
 ```sh
-hugo serve --watch -D
+hugo serve --watch --buildDrafts --source src
 ```
 
+## Dependencies
 
-# Editing/Syntax
-
-This site is has been built with the help of [Bootstrap] for CSS/JS heavy-lifting and [HUGO] for templating and DRY development. HUGO must be installed locally in order to adequately preview development via terminal command `hugo server`. Partials/repeated components can be be found in [`layouts/partials`]. Each HTML page ([`layouts/page`]) must have a corresponding Markdown file in the [`content`] folder.
-
-# Creating a New Page
-
-1. Create a new HTML file in [`layouts/page`].
-2. Define the content section via `{{ define "main" }}` prior to proposed content area, and `{{ end }}` after proposed content area. User this HTML file to affect layout and styling. Content may be added via the corresponding `.md` file (see step 3)
-3. Create an `.md` file in the [`content`] folder and provide the appropriate metadata. For example:
-    ```yaml
-    title: "White Paper"           # (How this page will appear in the menu)
-    Description: "tea.white paper" # (Populates as page title)
-    layout: "white-paper"          # (the associated HTML file)
-    menu: main                     # (Assign a menu)
-    weight: 7                      # (Order in which this item will appear)
-    ```
-    Following that, begin typing content. This will populate in the section of your HTML document that has been defined as `main`.
-4. If adding a menu link for an external source or ID, edit the [`config.toml`](config.toml) accordingly.
-5. Run with `hugo serve --watch -D`.
-
-
-# Editing Partials/Repeated Components
-
-Partials may be edited in plain HTML. No additional [HUGO] syntax is required.
-
-
-# Defining Partial Locations
-
-Partials are defined via the `baseof.html` file in [`layouts/default`]. This informs the layout of a newly generated page. Insert new partials via the syntax `{{- partial "partial.html" -}}`.
-
-
-# Dependencies
+Install hugo yourself or use tea: `sh <(curl tea.xyz) hugo`.
 
 | Project    | Version |
 |------------|---------|
-| nodejs.org |   ^18   |
-| gohugo.io  |  ^0.99  |
-| bootstrap  |   ^5    |
-| jquery     |  ^3.6   |
+| gohugo.io  |  >=0.99 |
 
 
+# Build
+
+Builds a static, deployable version of the website.
+
+```sh
+hugo --source src --destination ../public --minify
+```
+
+
+[tea.xyz]: https://tea.xyz
 [Bootstrap]: https://getbootstrap.com/docs/5.2/getting-started/introduction/
-[HUGO]: https://gohugo.io/documentation/
-[`content`]: content/
-[`layouts/page`]: layouts/page/
-[`layouts/partials`]: layouts/partials/
-[`layouts/default`]: layouts/default/
+[Hugo]: https://gohugo.io/documentation/
+[`./src/layouts/page/`]: src/layouts/page
+[`./src/content/`]: src/content
+[`./src/layouts/partials/`]: src/layouts/partials

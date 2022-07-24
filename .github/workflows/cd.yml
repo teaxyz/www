@@ -3,34 +3,32 @@ on:
     branches:
     - main
     paths-ignore:
-    - '**/*.md'
+    - '*.md'
 
 concurrency:
   group: deploy
   cancel-in-progress: true
 
+env:
+  TEA_SECRET: ${{ secrets.TEA_SECRET }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
     - name: Create Deployment
       uses: bobheadxi/deployments@v1
       id: deployment
       with:
         step: start
-        token: ${{ github.token }}
         env: aws
 
     - uses: actions/checkout@v3
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
+    - run: .github/mk-pantry-accessible.sh ${{ secrets.TEMP_JACOBS_GITHUB_PAT }}
+    - uses: teaxyz/setup@v0
       with:
-        hugo-version: 'latest'
-
-    - name: Build
-      run: hugo -s src -d ../public --minify
+        target: build
 
     ## means s3 sync will only sync things we need sync’d
     - uses: chetan/git-restore-mtime-action@v1
@@ -61,13 +59,11 @@ jobs:
           --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} \
           --paths '/*'
 
-
     - name: Seal Deployment
       uses: bobheadxi/deployments@v1
       if: always()
       with:
         step: finish
-        token: ${{ github.token }}
         status: ${{ job.status }}
         deployment_id: ${{ steps.deployment.outputs.deployment_id }}
         env: ${{ steps.deployment.outputs.env }}
